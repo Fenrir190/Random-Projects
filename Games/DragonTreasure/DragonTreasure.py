@@ -7,13 +7,17 @@ sight. Not all treasure is something benefical. This python game will simulate t
 # import packages
 import random
 import time
+from Item import *
+from Dragon import *
+from Player import *
 
 YES_CONST = "y"
-NO_CONST = "y"
+NO_CONST = "n"
 MIN_PATH_CONST = 2
 MAX_PATH_CONST = 5
 MAX_INVALID_RESPONSE_CONST = 3
 numInvalidResponses = 0
+treasures = []
 
 """
  Purpose: This function simply displays the intro to the game
@@ -31,7 +35,7 @@ def intro():
     initPathChoice()
 
 def enterPath(path):
-    print("under construction")
+    print("Under Construction")
 
 def pathChoice(numPaths):
     global numInvalidResponses
@@ -55,7 +59,7 @@ def pathChoice(numPaths):
             print("Or maybe they are... Depends on your outlook.")
             print("GAME OVER")
         else:
-            print("Where do you thing you are?\nNow isn't the time to sit around idle")
+            print("Where do you thing you are?\nNow isn't the time to idle")
             pathChoice(numPaths)
 
     else:
@@ -75,7 +79,7 @@ def initPathChoice():
 
     if((userChoice.lower() != YES_CONST) or (userChoice.lower() != NO_CONST)):
         print("A cowardly choice or wise one you shall never know...")
-        print("The among the last sounds you hear in this world are a loud cracking and slashing sound")
+        print("Among the last sounds you hear in this world are a loud cracking and slashing sound")
         print("before the world around you goes black")
         print("GAME OVER")
     else:
